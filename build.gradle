@@ -1,0 +1,41 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.wonder'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '15'
+def coreNGVersion="7.5.12"
+def allureVersion = "2.13.6"
+def testngVersion = "6.14.3"
+def slf4jApiVersion="1.7.30"
+def okhttp3Version = "4.5.0"
+def fastjsonVersion = "1.2.73"
+def slf4jVersion = "1.7.30"
+def extentreportsVersion = "3.0.3"
+def assertjVersion = '3.16.1'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.springframework.boot:spring-boot:2.4.0"
+	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+
+	implementation "org.assertj:assertj-core:${assertjVersion}"
+	implementation "org.slf4j:slf4j-api:${slf4jApiVersion}"
+	compile "com.aventstack:extentreports:${extentreportsVersion}"
+	implementation "com.squareup.okhttp3:okhttp:${okhttp3Version}"
+	implementation "com.alibaba:fastjson:${fastjsonVersion}"
+	implementation "org.springframework.boot:spring-boot:2.4.0"
+	implementation "org.springframework.boot:spring-boot-autoconfigure:2.4.0"
+}
+
+test {
+	useJUnitPlatform()
+}
